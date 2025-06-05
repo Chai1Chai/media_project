@@ -4,14 +4,63 @@ document.addEventListener('DOMContentLoaded', () => {
   const noise = document.getElementById('tvNoise');
   const shutterBtn = document.querySelector('.tvturnon-btn');
   const slides = document.querySelectorAll('.tv_slide');
+  const tvNoiseSound = document.getElementById('tvNoiseSound');
+  const homeSection = document.querySelector('.home');
+
+  
+
+// Создаем массив звуков для каждого слайда
+  const slideSounds = [
+    document.getElementById('sound1'),
+    document.getElementById('sound2'),
+    document.getElementById('sound3'),
+    document.getElementById('sound4'),
+    document.getElementById('sound5')
+  ];
 
   let currentSlide = 0;
   let isAnimating = false;
   let slideInterval;
 
+  // Останавливаем все звуки
+  function stopAllSounds() {
+    slideSounds.forEach(sound => {
+      sound.pause();
+      sound.currentTime = 0;
+    });
+  }
+
+    // Функция проверки видимости секции home
+  function isHomeSectionVisible() {
+    if (!homeSection) return true; // Если секции нет, считаем её видимой
+    
+    const rect = homeSection.getBoundingClientRect();
+    return (
+      rect.top <= window.innerHeight && 
+      rect.bottom >= 0
+    );
+  }
+
+  // Обработчик скролла
+  window.addEventListener('scroll', function() {
+    if (!isHomeSectionVisible()) {
+      stopAllSounds();
+      clearInterval(slideInterval); // Также останавливаем слайд-шоу
+    }
+  });
+
   async function goToSlide(index) {
     if (isAnimating) return;
     isAnimating = true;
+
+    // Включаем шум телевизора
+    if (isHomeSectionVisible()) {
+      tvNoiseSound.play();
+      noise.style.opacity = '1';
+    }
+    
+    // Останавливаем предыдущий звук
+    stopAllSounds();
 
     noise.style.opacity = '1';
     currentSlide = (index + slides.length) % slides.length;
@@ -20,7 +69,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     await new Promise(resolve => setTimeout(resolve, 2000));
 
-    noise.style.opacity = '0';
+    // Выключаем шум и включаем звук для текущего слайда
+    if (isHomeSectionVisible()) {
+      noise.style.opacity = '0';
+      tvNoiseSound.pause();
+      slideSounds[currentSlide].play();
+    }
 
     shutterBtn.style.transform = 'translateX(-50%) scale(0.9)';
     setTimeout(() => {
@@ -32,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function startSlideShow() {
     slideInterval = setInterval(() => {
       goToSlide(currentSlide + 1);
-    }, 5000);
+    }, 9000);
   }
 
   shutterBtn.addEventListener('click', () => {
@@ -40,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     goToSlide(currentSlide + 1);
     startSlideShow();
   });
-
+   
   startSlideShow();
 });
 
@@ -285,4 +339,52 @@ document.addEventListener('DOMContentLoaded', () => {
 
     decorObserver.observe(seaSection);
     }
+});
+
+//Audio
+document.addEventListener('DOMContentLoaded', function() {
+  const sections = {
+    sea: { 
+      element: document.querySelector('.sea'), 
+      audio: document.getElementById('seaAudio') 
+    },
+    trevel: { 
+      element: document.querySelector('.trevel'), 
+      audio: document.getElementById('travelAudio') 
+    }, 
+    blossom: { 
+    element: document.querySelector('.blossom'), 
+    audio: document.getElementById('blossomAudio') 
+    },
+    soul: { 
+    element: document.querySelector('.soul'), 
+    audio: document.getElementById('soulAudio') 
+    },
+    activity: { 
+    element: document.querySelector('.activity'), 
+    audio: document.getElementById('activityAudio') 
+    },
+  };
+
+
+  // Функция проверки видимости секции
+  function isSectionInView(section) {
+    const rect = section.getBoundingClientRect();
+    return (
+      rect.top <= window.innerHeight / 2 && 
+      rect.bottom >= window.innerHeight / 2
+    );
+  }
+
+  // Обработчик скролла
+  window.addEventListener('scroll', function() {
+    for (const [key, {element, audio}] of Object.entries(sections)) {
+      if (isSectionInView(element)) {
+        audio.play();
+      } else {
+        audio.pause();
+        audio.currentTime = 0; // Перемотка в начало
+      }
+    }
+  });
 });
