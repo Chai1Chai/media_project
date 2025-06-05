@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'PF Scandal Pro Display';
+    src: url('PFScandalPro-DisplayBold.eot');
+    src: local('PFScandalPro-DisplayBold'),
+        url('PFScandalPro-DisplayBold.eot?#iefix') format('embedded-opentype'),
+        url('PFScandalPro-DisplayBold.woff2') format('woff2'),
+        url('PFScandalPro-DisplayBold.woff') format('woff'),
+        url('PFScandalPro-DisplayBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PF Scandal Pro Display';
+    src: url('PFScandalPro-Display.eot');
+    src: local('PFScandalPro-Display'),
+        url('PFScandalPro-Display.eot?#iefix') format('embedded-opentype'),
+        url('PFScandalPro-Display.woff2') format('woff2'),
+        url('PFScandalPro-Display.woff') format('woff'),
+        url('PFScandalPro-Display.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PF Scandal Pro';
+    src: url('PFScandalPro-Black.eot');
+    src: local('PFScandalPro-Black'),
+        url('PFScandalPro-Black.eot?#iefix') format('embedded-opentype'),
+        url('PFScandalPro-Black.woff2') format('woff2'),
+        url('PFScandalPro-Black.woff') format('woff'),
+        url('PFScandalPro-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PF Scandal Pro Display';
+    src: url('PFScandalPro-DisplayBlack.eot');
+    src: local('PFScandalPro-DisplayBlack'),
+        url('PFScandalPro-DisplayBlack.eot?#iefix') format('embedded-opentype'),
+        url('PFScandalPro-DisplayBlack.woff2') format('woff2'),
+        url('PFScandalPro-DisplayBlack.woff') format('woff'),
+        url('PFScandalPro-DisplayBlack.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PF Scandal Pro';
+    src: url('PFScandalPro-Bold.eot');
+    src: local('PFScandalPro-Bold'),
+        url('PFScandalPro-Bold.eot?#iefix') format('embedded-opentype'),
+        url('PFScandalPro-Bold.woff2') format('woff2'),
+        url('PFScandalPro-Bold.woff') format('woff'),
+        url('PFScandalPro-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PF Scandal Pro';
+    src: url('PFScandalPro-Regular.eot');
+    src: local('PFScandalPro-Regular'),
+        url('PFScandalPro-Regular.eot?#iefix') format('embedded-opentype'),
+        url('PFScandalPro-Regular.woff2') format('woff2'),
+        url('PFScandalPro-Regular.woff') format('woff'),
+        url('PFScandalPro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

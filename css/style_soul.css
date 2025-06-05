@@ -1,0 +1,65 @@
+/* ===== Line_between_home_soul===== */
+.line_between_home_soul{
+  position: absolute;
+  width: 100%;
+  height: 400px;
+  background: url("../img/trevel_img/line_between_soul_travel.png") no-repeat center;
+  background-size: cover;
+  margin-top: -200px;
+  left: 0px;
+  z-index: 10;
+}
+.soul{
+  position: relative;
+  height: 1000px; 
+  display: flex;
+  justify-content: center;
+  background: #E9F8FF url('../img/soul_img/background_soul.png') repeat right;
+}
+.flower-butterfly {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+}
+.soul_section{
+  position: relative;
+  width: 1440px;
+  height: 1000px; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.soul-title {
+  padding: 100px 0 0 100px;
+  font-style: italic;
+  letter-spacing: 10px;
+  color: #8EABC0;
+  z-index: 10;
+}
+
+.decor {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.flower-butterfly { bottom: 0; left: 0; z-index: 5;}
+.moon { top: 30px; right: 0px; z-index: 5;}
+.dragonfly { top: 458px; right: 0px; z-index: 5; }
+.letter_soul{top: 300px; left: 220px; z-index: 2;}
+
+.soul_collage .soul_photo {
+  position: absolute;
+}
+.soul_photo1 { right: 106px; top: 236px; z-index: 2; }
+.soul_photo2 { right: 418px; top: 365px; z-index: 1; }
+.soul_photo3 { right: 45px; top: 503px; z-index: 3; }
+
+
+.decor, 
+.soul_collage .soul_photo {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}

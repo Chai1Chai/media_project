@@ -1,0 +1,127 @@
+/* ===== Line_between_activity_blossom ===== */
+.line_between_activity_blossom{
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    background: url("../img/trevel_img/line_between_soul_travel.png") no-repeat center;
+    background-size: cover;
+    margin-top: -200px;
+    left: 0px;
+    z-index: 10;
+}
+.blossom{
+    position: relative;
+    background-color: #F6F1F1;
+    height: 1000px; 
+    display: flex;
+    justify-content: center;
+}
+.sacura_tree {
+    position: absolute;
+    right: 0px; 
+    top: 0px;
+    z-index: 2; 
+}
+.blossom_section{
+    position: relative;
+    width: 1440px;
+    height: 1000px; 
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.title_blossom {
+    padding: 100px 0 0 100px; 
+    font-style: italic;
+    letter-spacing: 10px;
+    color: #774C67; 
+    z-index: 10;
+}
+.blossom_photo_collage {
+    position: absolute;
+    top: 260px;
+    left: 80px;
+    display: flex;
+    gap: 10px;
+    z-index: 1;
+}
+
+.blossom_right_photos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.blossom_photo1, .blossom_photo2, .blossom_photo3, .letter {
+    opacity: 0; 
+    transform: translateY(500px);
+    transition: opacity 2s ease, transform 4s ease;
+    pointer-events: none;
+    will-change: opacity, transform; 
+}
+
+.blossom_photo1.photo-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s; 
+}
+
+.blossom_photo2.photo-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 1s; 
+}
+
+.blossom_photo3.photo-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 1.5s;
+}
+.letter.photo-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s; 
+}
+.letter {
+    position: absolute;
+    top: 200px;
+    left: 700px;
+    z-index: 1;
+}
+
+.petals-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1114px;
+    pointer-events: none;
+    z-index: 3;
+}
+.sakura-petal {
+    position: absolute;
+    background-image: url('../img/blossom_img/petal.png');
+    background-size: cover;
+    opacity: 1;
+    animation: fall linear infinite;
+    z-index: 4;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(1114px) rotate(360deg);
+        opacity: 0;
+    }
+}

@@ -1,0 +1,147 @@
+/* ===== Home Section ===== */
+.home{
+    background: #FEFFD5 url('../img/home_img/background_home.png');
+    height: 1000px; 
+    display: flex;
+    justify-content: center;
+}
+.home_section{
+    position: relative;
+    width: 1440px;
+    height: 1000px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title_home{
+    padding-top: 40px;
+    color: #620D15;
+    font-style: italic;
+    letter-spacing: 10px;
+    z-index: 5;
+    align-self: flex-start;
+}
+.tv-wrapper {
+    margin-top: auto;
+    margin-bottom: 80px;
+    width: 700px;
+    box-sizing: border-box;    
+}
+
+.tv-container {
+    position: relative;
+    width: 700px;
+}
+
+.tv-body {
+    width: 700px;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 5;
+    pointer-events: none;
+    user-select: none;
+}
+
+.tv_screen-area {
+    position: absolute;
+    top: 5%;
+    left: 20%;
+    width: 47%;
+    height: 38%;
+    overflow: hidden;
+    z-index: 5;
+    background: #000;
+}
+
+.tv_slider {
+    display: flex;
+    width: 400%;
+    height: 100%;
+}
+
+.tv_slide {
+    width: 25%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.tvturnon-btn {
+    position: absolute;
+    top: 34%;
+    left: 79%;
+    transform: translateX(-50%);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #ff333300;
+    border: 1px solid #000000;
+    cursor: pointer;
+    z-index: 15;
+    transition: all 0.2s;
+}
+
+.tvturnon-btn:hover {
+    transform: translateX(-50%) scale(1.05);
+}
+
+.tvturnon-btn:active {
+    transform: translateX(-50%) scale(0.95);
+}
+
+.tv-noise {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(0, 0, 0, 1) 0%, 
+        rgba(255, 255, 255, 1) 50%, 
+        rgba(0,0,0,1) 100%);
+    background-size: 100% 5px;
+    opacity: 1;
+    pointer-events: none;
+    z-index: 20;
+    animation: tvNoise 1s infinite;
+}
+.flower_and_books, .lamp, .rug_note {
+    position: absolute;
+    pointer-events: none; 
+}
+
+.flower_and_books{
+    width: 340px;
+    bottom: 70px;
+    right: 60px;
+    z-index: 10;
+}
+.lamp{
+    width: 340px;
+    bottom: 100px;
+    left: -20px;
+    z-index: 2;
+}
+
+.rug_note{
+    width: 1160px;
+    top: 10%;
+    left: 20%;
+    z-index: 1;
+}
+
+@keyframes tvNoise {
+    0% { background-position: 0% 0%; }
+    10% { background-position: -5% -10%; }
+    20% { background-position: -15% 5%; }
+    30% { background-position: 7% -25%; }
+    40% { background-position: 20% 25%; }
+    50% { background-position: -25% 10%; }
+    60% { background-position: 15% 5%; }
+    70% { background-position: 0% 15%; }
+    80% { background-position: 25% -10%; }
+    90% { background-position: -10% 10%; }
+    100% { background-position: 0 0; }
+}
+
+
